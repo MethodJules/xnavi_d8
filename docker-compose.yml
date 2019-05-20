@@ -1,0 +1,30 @@
+version: '3'
+services:
+  db:
+    image: mariadb:10.2
+    environment:
+      MYSQL_DATABASE: xnavi_d8
+      MYSQL_ROOT_PASSWORD: xnavi_d8
+    volumes:
+      - db_data:/var/lib/mysql
+    restart: always
+    #network_mode: host
+  drupal:
+    depends_on:
+      - db
+    build: .
+    ports:
+      - "8080:80"
+    volumes:
+      - ./app:/app
+    #network_mode: host
+    restart: always
+  solr:
+    image: solr:7.5
+    ports:
+      - "8983:8983"
+    #volumes:
+    #  - core2:/opt/solr/server/solr/core2
+volumes:
+  db_data:
+  #core2:
