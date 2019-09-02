@@ -1,0 +1,27 @@
+xnavi_bi.content:
+  path: 'xnavi_bi/content/{chartType}/{vocabulary}'
+  defaults:
+    _controller: 'Drupal\xnavi_bi\Controller\XNaviBIController::content'
+  requirements:
+    _access: 'TRUE'
+
+xnavi_bi.form:
+  path: 'xnavi_bi/form'
+  defaults:
+    _form: 'Drupal\xnavi_bi\Form\XNaviBIForm'
+  requirements:
+    _access: 'TRUE'
+
+xnavi_bi.data:
+  path: 'xnavi_bi/data/{vocabulary}'
+  defaults:
+    _controller: 'Drupal\xnavi_bi\Controller\XNaviBIController::getData'
+  requirements:
+    _access: 'TRUE'
+
+xnavi_bi.data.example:
+  path: 'xnavi_bi/example_data'
+  defaults:
+    _controller: 'Drupal\xnavi_bi\Controller\XNaviBIController::getExampleData'
+  requirements:
+    _access: 'TRUE'
