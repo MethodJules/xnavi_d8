@@ -1,0 +1,16 @@
+
+hvvconnections.h_v_v_connection_controller_hello:
+  path: '/hvvconnections/hello/{name}'
+  defaults:
+    _controller: '\Drupal\hvvconnections\Controller\HVVConnectionController::hello'
+    _title: 'content'
+  requirements:
+    _permission: 'access content'
+
+hvvconnections.h_v_v_connection_controller_table:
+  path: '/hvvconnections/table'
+  defaults:
+    _controller: '\Drupal\hvvconnections\Controller\HVVConnectionController::showStations'
+    _title: 'content'
+  requirements:
+    _permission: 'access content'

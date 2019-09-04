@@ -1,0 +1,35 @@
+<?php
+
+/**
+ * @file
+ * Contains hvvconnections.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function hvvconnections_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the hvvconnections module.
+    case 'help.page.hvvconnections':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('My Awesome Module') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function hvvconnections_theme() {
+  return [
+    'hvvconnections' => [
+      'render element' => 'children',
+    ],
+  ];
+}
